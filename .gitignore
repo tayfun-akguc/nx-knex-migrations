@@ -40,3 +40,7 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+compose-stack/*
+!compose-stack/postgres-init
+!compose-stack/compose.yml

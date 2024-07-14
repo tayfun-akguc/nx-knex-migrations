@@ -1,0 +1,38 @@
+services:
+  user-service-db:
+    container_name: user-service-db
+    image: postgres:16
+    restart: always
+    ports:
+      - '5401:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./user-service-pgdata:/var/lib/postgresql/data
+      - ./postgres-init/user-service-db-init.sql:/docker-entrypoint-initdb.d/init.sql
+  transaction-service-db:
+    container_name: transaction-service-db
+    image: postgres:16
+    restart: always
+    ports:
+      - '5402:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./transaction-service-pgdata:/var/lib/postgresql/data
+      - ./postgres-init/transaction-service-db-init.sql:/docker-entrypoint-initdb.d/init.sql
+  adminer:
+    container_name: adminer
+    image: adminer:4
+    restart: always
+    ports:
+      - '8080:8080'
+    environment:
+      - ADMINER_DESIGN=nette
+    depends_on:
+      - user-service-db
+      - transaction-service-db
