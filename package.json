@@ -2,7 +2,10 @@
   "name": "@nx-knex-migrations/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "compose:up": "docker-compose -f compose-stack/compose.yml up -d",
+    "compose:down": "docker-compose -f compose-stack/compose.yml down"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^10.0.2",
