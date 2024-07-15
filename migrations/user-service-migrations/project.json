@@ -1,0 +1,9 @@
+{
+  "name": "user-service-migrations",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "migrations/user-service-migrations/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project user-service-migrations --web",
+  "targets": {}
+}

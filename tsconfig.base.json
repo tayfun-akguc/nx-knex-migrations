@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-knex-migrations/transaction-service-migrations": [
+        "migrations/transaction-service-migrations/src/index.ts"
+      ],
+      "@nx-knex-migrations/user-service-migrations": [
+        "migrations/user-service-migrations/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
