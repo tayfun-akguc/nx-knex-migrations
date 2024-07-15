@@ -44,3 +44,4 @@ Thumbs.db
 compose-stack/*
 !compose-stack/postgres-init
 !compose-stack/compose.yml
+.env
