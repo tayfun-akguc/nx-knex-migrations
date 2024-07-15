@@ -5,5 +5,12 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project user-service-migrations --web",
-  "targets": {}
+  "targets": {
+    "knex": {
+      "command": "npx knex",
+      "options": {
+        "cwd": "migrations/user-service-migrations"
+      }
+    }
+  }
 }
